@@ -25,7 +25,7 @@ namespace metaclicker
             // TODO: Parse config
             var builder = ServerBuilder.New()
                                        .SetAddress(IPAddress.Any)
-                                       .SetPort(5002)
+                                       .SetPort(9002)
                                        .SetOwinApp(HandleRequest);
 
             return new NowinServerInformation(builder);
