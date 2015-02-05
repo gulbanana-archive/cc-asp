@@ -10,12 +10,10 @@
         "**.vspscc"
     ],
     "dependencies": {
+        "metaclicker.Nowin": "",
         "Microsoft.AspNet.Server.IIS": "1.0.0-beta1",
         "Microsoft.AspNet.Diagnostics": "1.0.0-beta1",
-        "Microsoft.AspNet.Mvc": "6.0.0-beta1",
-        "Microsoft.AspNet.Owin": "1.0.0-beta1",
-        "Microsoft.AspNet.Hosting": "1.0.0-beta1",
-        "Nowin": "0.13.2"
+        "Microsoft.AspNet.Mvc": "6.0.0-beta1"
     },
     "frameworks": {
         "aspnet50": { },
@@ -24,6 +22,6 @@
     "commands": {
         "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:9002",
         "kestrel": "Microsoft.AspNet.Hosting --server Kestrel --server.urls http://localhost:9002",
-        "nowin": "Microsoft.AspNet.Hosting --server Nowin --server.urls http://localhost:9002"
+        "nowin": "Microsoft.AspNet.Hosting --server metaclicker.Nowin --server.urls http://localhost:9002"
     }
 }

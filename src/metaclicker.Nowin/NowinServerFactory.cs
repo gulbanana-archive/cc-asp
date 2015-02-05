@@ -10,10 +10,7 @@ using Nowin;
 
 namespace metaclicker
 {
-    // dependencies
-    // "Nowin": "0.11.0",
-    // "Microsoft.AspNet.Hosting": "0.1-alpha-*",
-    // "Microsoft.AspNet.Owin": "0.1-alpha-*"
+    //Adapts the Nowin OWIN server to vNext, following @davidfowl's example
     public class NowinServerFactory : IServerFactory
     {
         private Func<object, Task> _callback;
