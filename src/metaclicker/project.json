@@ -14,8 +14,12 @@
         "Microsoft.AspNet.Diagnostics": "1.0.0-beta1",
         "Microsoft.AspNet.Mvc": "6.0.0-beta1"
     },
-    "frameworks" : {
-        "aspnet50" : { },
-        "aspnetcore50" : { }
+    "frameworks": {
+        "aspnet50": { },
+        "aspnetcore50": { }
+    },
+    "commands": {
+        /* Change the port number when you are self hosting this application */
+        "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:9002"
     }
 }
