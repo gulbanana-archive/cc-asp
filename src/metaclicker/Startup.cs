@@ -17,7 +17,6 @@ namespace metaclicker
         {
             app.UseMvc();
             app.UseErrorPage(ErrorPageOptions.ShowAll);
-            app.UseOwin();
         }
     }
 }
