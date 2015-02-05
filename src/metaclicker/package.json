@@ -1,0 +1,7 @@
+﻿{
+    "name": "metaclicker",
+    "version": "0.0.0",
+    "devDependencies": {
+        "grunt-typescript": "0.6.1"
+    }
+}
