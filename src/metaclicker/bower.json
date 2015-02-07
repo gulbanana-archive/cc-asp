@@ -1,0 +1,8 @@
+{
+    "name": "metaclicker",
+    "private": true,
+    "dependencies": {
+    },
+    "exportsOverride": {
+    }
+}
