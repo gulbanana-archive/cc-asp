@@ -5,7 +5,6 @@ Click here to learn more. http://go.microsoft.com/fwlink/?LinkID=513275&clcid=0x
 */
 module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-browserify");
-	grunt.loadNpmTasks("grunt-contrib-concat");
 
     grunt.initConfig({
         browserify: {
@@ -22,17 +21,15 @@ module.exports = function (grunt) {
         		dest: 'wwwroot/app.js',
         		options: {
         			external: ['react'],
+        			transform: ['uglifyify'],
         			browserifyOptions: {
         				plugin: [['tsify', { noImplicitAny: true }]],
         				debug: true
         			}
         		}
         	}
-        },
-    	concat: {
-    		'wwwroot/main.js': ['wwwroot/vendor.js', 'wwwroot/app.js']
-		}
+        }
     });
 
-    grunt.registerTask('default', ['browserify', 'concat']);
+    grunt.registerTask('default', ['browserify:app']);
 };
