@@ -2,10 +2,11 @@
     "name": "metaclicker",
     "version": "0.0.0",
 	"devDependencies": {
-		"typescript": "^1.4.1",
 		"grunt": "^0.4.5",
-		"grunt-typescript": "^0.6.1",
 		"grunt-browserify": "^3.3.0",
+		"typescript": "^1.4.1",
+		"browserify": "^8.1.3",
+		"tsify": "^0.8.0",
 		"react": "0.13.0-beta.1"
 	}
 }
