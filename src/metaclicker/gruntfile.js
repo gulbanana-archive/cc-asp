@@ -1,4 +1,4 @@
-/// <binding />
+/// <binding AfterBuild='browserify:app' Clean='browserify:vendor' />
 /*
 This file in the main entry point for defining grunt tasks and using grunt plugins.
 Click here to learn more. http://go.microsoft.com/fwlink/?LinkID=513275&clcid=0x409
@@ -31,5 +31,5 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('default', ['browserify:app']);
+    grunt.registerTask('default', ['browserify:vendor', 'browserify:app']);
 };
