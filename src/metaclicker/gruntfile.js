@@ -9,11 +9,14 @@ module.exports = function (grunt) {
     grunt.initConfig({
         typescript: {
             base: {
-                src: ['Scripts/**/*.ts'],
-                dest: 'wwwroot/app.js',
+            	src: ['Scripts/**/*.ts'],
+				dest: 'wwwroot/',
                 options: {
-                    module: 'amd',
-                    target: 'es5'
+                    module: 'commonjs',
+                    target: 'es5',
+                    singleFile: true,
+                    sourceMap: true,
+					basePath: 'Scripts'
                 }
             }
         }
