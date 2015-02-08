@@ -9,11 +9,14 @@ module.exports = function (grunt) {
     grunt.initConfig({
         browserify: {
         	dist: {
-        		src: ['Scripts/**/*.ts'],
+        		src: ['./Scripts/**/*.ts'],
         		dest: 'wwwroot/app.js',
-        		browserifyOptions: {
-        			plugin: [['tsify', { noImplicitAny: true }]],
-        			debug: true
+        		options: { 
+        			browserifyOptions: {
+        				plugin: [
+							['tsify', { noImplicitAny: true }]],
+        				debug: true
+        			} 
         		},
         	}
         }
