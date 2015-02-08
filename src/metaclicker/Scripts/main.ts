@@ -2,6 +2,6 @@
 import React = require('react');
 
 React.render(
-	React.DOM.h1('Hello, world!'),
+	React.createElement('h1', {}, 'Hello, world!'),
 	document.getElementById('content')
 );
