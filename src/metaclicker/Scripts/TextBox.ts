@@ -6,3 +6,5 @@ class TextBox extends React.Component<{ text: string }, any, any> {
 		return React.DOM.div({}, this.props.text);
 	}
 }
+
+export = TextBox;
