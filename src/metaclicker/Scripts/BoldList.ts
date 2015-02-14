@@ -4,9 +4,10 @@ import TextBox = require('./TextBox');
 
 class BoldList extends React.Component<{ strings: string[] }, any, any> {
 	render() {
-		var textboxes = this.props.strings.map(s => React.createElement<{ text: string; bold: boolean }>(TextBox, { text: s, bold: true }));
+		var textboxes = this.props.strings.map(s => React.createElement(TextBox, { text: s, bold: true }));
 		return React.DOM.div(null, textboxes);
 	}
 }
 
-export = BoldList;
+var contract = <React.ComponentClass<{ strings: string[] }, any, any>>BoldList;
+export = contract;

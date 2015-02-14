@@ -11,4 +11,5 @@ class TextBox extends React.Component<{ text: string; bold: boolean }, any, any>
 	}
 }
 
-export = TextBox;
+var contract = <React.ComponentClass<{ text: string; bold: boolean }, any, any>>TextBox;
+export = contract;
