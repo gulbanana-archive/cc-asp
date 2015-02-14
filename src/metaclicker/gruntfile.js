@@ -13,7 +13,8 @@ module.exports = function (grunt) {
         		dest: 'wwwroot/vendor.js',
         		options: {
         			require: ['react'],
-        			transform: [['uglifyify', { global: true }]],
+        			transform: [['envify', { global: true, NODE_ENV: 'production' }],
+						        ['uglifyify', { global: true }]],
         		}
         	},
         	app: {
