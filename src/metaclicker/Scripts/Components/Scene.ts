@@ -1,4 +1,4 @@
-﻿/// <reference path="Definitions/react-0.13.0.d.ts"/>
+﻿/// <reference path="../Definitions/react-0.13.0.d.ts"/>
 import React = require('react');
 import Entity = require('./Entity');
 
