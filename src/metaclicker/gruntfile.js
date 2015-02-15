@@ -24,7 +24,7 @@ module.exports = function (grunt) {
         			external: ['react'],
         			transform: ['uglifyify'],
         			browserifyOptions: {
-        				plugin: [['tsify', { noImplicitAny: true }]],
+        				plugin: [['tsify', { noImplicitAny: false }]],
         				debug: true
         			}
         		}

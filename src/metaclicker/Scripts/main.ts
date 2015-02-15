@@ -1,10 +1,16 @@
 ﻿/// <reference path="Definitions/react-0.13.0.d.ts" />
 import React = require('react');
-import BoldList = require('./BoldList');
+import Scene = require('./Scene');
 
-var x = 0;
+var noughts = ['X| | ',
+	           ' |X| ',
+               ' | |O']
 
 React.render(
-	React.createElement(BoldList, { next: () => { x++; return ""+x; } }),
+	React.createElement(Scene, {
+		entities: [{
+			art: noughts
+		}]
+	}),
 	document.getElementById('content')
 );
