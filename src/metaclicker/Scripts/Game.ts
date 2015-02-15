@@ -4,10 +4,14 @@ import Scene = require('./Components/Scene');
 import art = require('./art');
 
 export class Game {
-	_intervalID: number;
-	_fps = 5;
 	_state = { entities: [{ name: 'Game', art: art.noughts }] }
-	_contentElement = document.getElementById('content');
+	_renderTarget: Element
+	_intervalID: number;
+	_fps: number;
+
+	constructor(e: Element) {
+		this._renderTarget = e;
+	}
 
 	_createPlayer() {
 		return { name: 'Player', art: art.dude }
@@ -23,10 +27,12 @@ export class Game {
 	}
 
 	_draw() {
-		React.render(React.createElement(Scene, this._state), this._contentElement);
+		React.render(React.createElement(Scene, this._state), this._renderTarget);
 	}
 
-	start() {
+	start(fps: number) {
+		this._fps = fps;
+
 		var skipTicks = 1000 / this._fps;
 		var maxFrameSkip = 10;
 		var nextGameTick = (new Date).getTime();
