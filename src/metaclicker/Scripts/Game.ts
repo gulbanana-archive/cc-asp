@@ -4,7 +4,7 @@ import Scene = require('./Components/Scene');
 import art = require('./art');
 
 export class Game {
-	_state = { entities: [{ name: 'Game', art: art.noughts }] }
+	_state = { entities: [{ name: 'Game Board', art: art.noughts }] }
 	_renderTarget: Element
 	_intervalID: number;
 	_fps: number;
@@ -13,13 +13,13 @@ export class Game {
 		this._renderTarget = e;
 	}
 
-	_createPlayer() {
-		return { name: 'Player', art: art.dude }
+	_createPlayer(n: number) {
+		return { name: 'Player ' + n, art: art.dude }
 	}
 
 	_update() {
-		if (this._state.entities.length < 3) {
-			this._state.entities.push(this._createPlayer());
+		if (this._state.entities.length < 5) {
+			this._state.entities.push(this._createPlayer(this._state.entities.length));
 		} else {
 			var x = this._state.entities.shift()
 			this._state.entities.push(x);
