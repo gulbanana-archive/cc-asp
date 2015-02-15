@@ -50,7 +50,7 @@ class Scene extends React.Component<Props, State, any> {
 			x += widthPerEntity;
 		});
 
-		return React.DOM.div(null,
+		return React.DOM.div({ style: { height: '100vh' } },
 			divs
 		);
 	}
