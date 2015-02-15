@@ -14,9 +14,9 @@ var dude = [' ( ) ',
 
 React.render(
 	React.createElement(Scene, {
-		entities: [{ art: dude },
-			       { art: noughts },
-			       { art: dude }]
+		entities: [{ name: 'Developer', art: dude },
+			       { name: 'Game', art: noughts },
+			       { name: 'Developer', art: dude }]
 	}),
 	document.getElementById('content')
 );

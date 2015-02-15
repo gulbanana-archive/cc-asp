@@ -3,7 +3,10 @@ import React = require('react');
 import Entity = require('./Entity');
 
 interface Props {
-	entities: { art: string[] }[]
+	entities: {
+		name: string;
+		art: string[]
+	}[]
 }
 
 interface State {

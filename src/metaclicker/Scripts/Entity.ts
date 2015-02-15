@@ -2,16 +2,20 @@
 import React = require('react');
 
 interface Props {
-	art: string[]
+	name: string;
+	art: string[];
 }
 
 class Entity extends React.Component<Props, any, any> {
 	render() {
-		return React.DOM.div(null,
+		return React.DOM.div({ style: { display: 'flex', flexDirection: 'column', alignItems: 'center' } },
 			React.DOM.pre(null,
 				this.props.art.join('\n')
-			)
-		);
+			),
+			React.DOM.p({ style: { fontFamily: 'sans-serif' } },
+				this.props.name
+				)
+			);
 	}
 }
 
