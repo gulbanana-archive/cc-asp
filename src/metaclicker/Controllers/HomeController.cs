@@ -4,7 +4,8 @@
 
 namespace metaclicker.Controllers
 {
-    public class InnerController : Controller
+    [Route("/")]
+    public class HomeController : Controller
     {
         // GET: /<controller>/
         public IActionResult Index()
