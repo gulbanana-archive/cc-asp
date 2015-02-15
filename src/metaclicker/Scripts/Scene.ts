@@ -6,12 +6,48 @@ interface Props {
 	entities: { art: string[] }[]
 }
 
-class Scene extends React.Component<Props, any, any> {
-	render() {
-		var divs = [];
+interface State {
+	width: number;
+	height: number;
+}
 
+class Scene extends React.Component<Props, State, any> {
+	state = {
+		width: 0,
+		height: 0
+	}
+
+	componentDidMount() {
+		this.updateDimensions()
+		window.addEventListener("resize", () => this.updateDimensions());
+	}
+
+	componentWillUnmount() {
+        window.removeEventListener("resize",() => this.updateDimensions());
+    }
+
+	updateDimensions() {
+		var e = React.findDOMNode(this);
+        this.setState({ width: e.clientWidth, height: e.clientHeight });
+    }
+
+	render() {
+		var n = this.props.entities.length;
+		var widthPerEntity = this.state.width / n;
+		var x = widthPerEntity / 2;
+		var y = this.state.height / 2;
+
+		var divs = [];
 		this.props.entities.forEach((e) => {
-			divs.push(React.DOM.div({ style: null }, React.createElement(Entity, e)));
+			var s: React.CSSProperties = {
+				position: 'absolute',
+				left: x,
+				top: y
+			}
+
+			divs.push(React.DOM.div({ style: s }, React.createElement(Entity, e)));
+
+			x += widthPerEntity;
 		});
 
 		return React.DOM.div(null,
@@ -20,5 +56,5 @@ class Scene extends React.Component<Props, any, any> {
 	}
 }
 
-var contract = <React.ComponentClass<Props, any, any>>Scene;
+var contract = <React.ComponentClass<Props, State, any>>Scene;
 export = contract;

@@ -4,13 +4,19 @@ import Scene = require('./Scene');
 
 var noughts = ['X| | ',
 	           ' |X| ',
-               ' | |O']
+	           ' | |O']
+
+var dude = [' ( ) ',
+	        ' _|_ ',
+	        '/ | \\ ',
+	        ' / \\ ',
+	        '|   |']
 
 React.render(
 	React.createElement(Scene, {
-		entities: [{
-			art: noughts
-		}]
+		entities: [{ art: dude },
+			       { art: noughts },
+			       { art: dude }]
 	}),
 	document.getElementById('content')
 );
